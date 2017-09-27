@@ -1,0 +1,9 @@
+.gradle
+.allure
+**/build
+**/out
+
+#IDEA Files
+.idea
+*.iml
+*.ipr

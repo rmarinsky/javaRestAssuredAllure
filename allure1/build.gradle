@@ -1,0 +1,37 @@
+//Generator for asserts
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath 'ru.d10xa:gradle-allure-plugin:0.5.5'
+        classpath "gradle.plugin.com.github.opengl-8080:assertjGen-gradle-plugin:1.1.3"
+    }
+}
+
+//Comment all this block if you rewrite some part of generated any class
+/*apply plugin: "com.github.opengl-BOBO.assertjGen"
+
+assertjGen {
+    classOrPackageNames = ['io.swagger.petstore.entities'] //package path for converting it to following outputDir
+    outputDir = 'src/main/java/io/swagger/petstore/asserts' //dir were will be located assertions for entities class
+    cleanOnlyFiles = true
+}*/
+
+apply plugin: 'ru.d10xa.allure'
+
+allure {
+    aspectjweaver = true
+    junit = true
+
+    allureResultsDir = "$buildDir/allure-results"
+    allureReportDir = "$buildDir/allure-report"
+}
+
+dependencies {
+    compile 'ru.yandex.qatools.allure:allure-junit-adaptor:1.5.4'
+}
+
+tasks.withType(Test)*.finalizedBy allureReport

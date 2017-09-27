@@ -1,0 +1,4 @@
+rootProject.name = 'javaRestAssuredAllure'
+include 'allure1'
+include 'allure2'
+

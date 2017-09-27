@@ -1,0 +1,27 @@
+group 'javaRestAssuredAllure'
+version '0.1'
+
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        compile(
+                "junit:junit:4.12",
+                "io.rest-assured:rest-assured:3.0.3",
+                "org.assertj:assertj-core:3.8.0",
+                'org.slf4j:slf4j-nop:1.7.22',
+                'com.fasterxml.jackson.core:jackson-databind:2.9.0'
+        )
+    }
+
+}
