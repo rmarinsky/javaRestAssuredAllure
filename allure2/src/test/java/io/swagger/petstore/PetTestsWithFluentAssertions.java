@@ -33,7 +33,7 @@ public class PetTestsWithFluentAssertions {
         PetActions petAction = new PetActions();
 
         petAction.addNewPet(testPet);
-        petAction.deletePet(testPet);
+        petAction.deletePet(testPet); //unfortunately there is a bug of allure-rest-assured
 
         MessageResponse messageResponse = petAction.getAbsentPet(testPet);
 
