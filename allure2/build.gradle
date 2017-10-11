@@ -11,7 +11,6 @@ buildscript {
 }
 
 apply plugin: 'io.qameta.allure'
-
 apply plugin: "com.github.opengl-BOBO.assertjGen"
 
 assertjGen {
@@ -23,14 +22,14 @@ assertjGen {
 compileTestJava.dependsOn.remove("assertjGen")
 
 ext {
-    allureVer = "2.0-BETA18"
+    allureVer = "2.0-BETA19"
 }
 
 allure {
     autoconfigure = true
     aspectjweaver = true
 
-    version = '2.3.5'
+    version = '2.4.1'
 
     allureJavaVersion = allureVer
 

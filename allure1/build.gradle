@@ -11,14 +11,15 @@ buildscript {
     }
 }
 
-//Comment all this block if you rewrite some part of generated any class
-/*apply plugin: "com.github.opengl-BOBO.assertjGen"
+apply plugin: "com.github.opengl-BOBO.assertjGen"
 
 assertjGen {
     classOrPackageNames = ['io.swagger.petstore.entities'] //package path for converting it to following outputDir
     outputDir = 'src/main/java/io/swagger/petstore/asserts' //dir were will be located assertions for entities class
     cleanOnlyFiles = true
-}*/
+}
+
+compileTestJava.dependsOn.remove("assertjGen")
 
 apply plugin: 'ru.d10xa.allure'
 
