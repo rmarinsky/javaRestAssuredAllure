@@ -20,7 +20,7 @@ class PetActions {
                 .setBaseUri("http://petstore.swagger.io")
                 .setBasePath("/v2/pet")
                 .setContentType(ContentType.JSON)
-                .log(LogDetail.ALL).build().filter(new AllureRestAssured());
+                .log(LogDetail.ALL).addFilter(new AllureRestAssured()).build();
     }
 
     Pet addNewPet(Pet petRequest) {

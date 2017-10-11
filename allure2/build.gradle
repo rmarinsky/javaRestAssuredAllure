@@ -43,3 +43,13 @@ dependencies {
             "io.qameta.allure:allure-rest-assured:${allureVer}"
     )
 }
+
+tasks.withType(Test) {
+    testTask ->
+        testTask.reports.junitXml.enabled = true
+        testTask.reports.html.enabled = false
+        testTask.testLogging.showStackTraces = true
+        testTask.testLogging.exceptionFormat = 'full'
+        testTask.testLogging.showStandardStreams = true
+        testTask.outputs.upToDateWhen { false }
+}
